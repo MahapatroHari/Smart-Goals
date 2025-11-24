@@ -72,7 +72,6 @@ const DoughnutChartContainer = () => {
                 label: "Sales by Category",
                 data: Object.values(categoryTotals),
                 borderWidth: 1,
-                borderJoinStyle: 'round',
             },
         ],
     };
