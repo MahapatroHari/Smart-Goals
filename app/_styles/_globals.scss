@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    max-width: 540px;
+
+    @media (width>=1200px) {
+        padding-right: 15px;
+        padding-left: 15px;
+        max-width: 1150px;
+    }
+}

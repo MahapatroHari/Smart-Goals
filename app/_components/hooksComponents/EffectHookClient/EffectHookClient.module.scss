@@ -1,0 +1,13 @@
+.effectHookClient {
+    margin-top: 80px;
+
+    .usersContainer {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 30px;
+    }
+
+    .userCard {
+        margin-bottom: 15px;
+    }
+}

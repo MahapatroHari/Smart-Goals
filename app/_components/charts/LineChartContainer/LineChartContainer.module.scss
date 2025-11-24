@@ -1,0 +1,38 @@
+.lineChartContainer {
+    margin-top: 60px;
+    width: 100%;
+
+    @media (width >=1200px) {
+        margin-top: 80px;
+    }
+
+
+    .filterBar {
+        background-color: #000000;
+        border-radius: 12px;
+        padding: 12px 16px;
+        margin-bottom: 24px;
+        width: fit-content;
+        display: flex;
+        gap: 16px;
+
+        .button {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #fffffff0;
+            }
+        }
+    }
+
+    .chart {
+        border: 1px solid #000;
+        margin-bottom: 50px;
+    }
+}
