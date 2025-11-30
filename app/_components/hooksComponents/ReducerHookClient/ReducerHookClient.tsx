@@ -11,7 +11,11 @@ const taskReducer = (state: any[], action: any) => {
             return state.filter((task) => task.id !== action.payload);
 
         case 'TOGGLE_TASK':
-            return state;
+            return state.map((task) =>
+                task.id === action.payload ? { ...task, done: !task.done } : task
+            );
+        case 'CLEAR_ALL':
+            return [];
 
         default:
             return state;
@@ -30,7 +34,6 @@ const ReducerHookClient = () => {
             payload: {
                 id: Date.now(),
                 title: text,
-                priority: 'Medium'
             }
         };
 
@@ -45,20 +48,30 @@ const ReducerHookClient = () => {
         });
     };
 
+    const handleDone = (id: number) => {
+        dispatch({
+            type: 'TOGGLE_TASK',
+            payload: id
+        });
+    }
+
 
     return (
-        <div className={styles.reducerHookClient} style={{ padding: '20px' }}>
-            <h2>Task Master (useReducer)</h2>
+        <div className={styles.reducerHookClient}>
+            <h2>To-Do List (useReducer)</h2>
 
-            <div style={{ marginBottom: '20px' }}>
+            <div className={styles.inputContainer}>
                 <input
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="New Task..."
-                    style={{ padding: '8px', marginRight: '10px' }}
+                    className={styles.taskInput}
                 />
-                <button onClick={handleAddTask} style={{ padding: '8px 16px' }}>
+                <button onClick={handleAddTask} className={styles.actionButton}>
                     Add
+                </button>
+                <button onClick={() => dispatch({ type: 'CLEAR_ALL' })} className={styles.actionButton}>
+                    Clear All
                 </button>
             </div>
 
@@ -66,27 +79,29 @@ const ReducerHookClient = () => {
                 {taskList.length === 0 ? (
                     <p>No tasks yet.</p>
                 ) : (
-                    <ul>
+                    <>
                         {taskList.map((task) => (
-                            <li key={task.id} style={{
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                marginBottom: '10px',
-                                background: '#f0f0f0',
-                                padding: '10px',
-                                borderRadius: '4px'
-                            }}>
-                                <span>{task.title} <small>({task.priority})</small></span>
+                            <div
+                                key={task.id}
+                                className={`${task.done ? styles.doneTask : ''} ${styles.taskItem}`}
+                            >
+                                <span>{task.title}</span>
 
-                                <button
-                                    onClick={() => handleDelete(task.id)}
-                                    style={{ background: 'red', color: 'white', border: 'none', cursor: 'pointer' }}
-                                >
-                                    Delete
-                                </button>
-                            </li>
+                                <div className={styles.taskActions}>
+                                    <button onClick={() => handleDone(task.id)} className={styles.toggleButton}>
+                                        Done
+                                    </button>
+
+                                    <button
+                                        onClick={() => handleDelete(task.id)}
+                                        className={styles.removeButton}
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
                         ))}
-                    </ul>
+                    </>
                 )}
             </div>
         </div>

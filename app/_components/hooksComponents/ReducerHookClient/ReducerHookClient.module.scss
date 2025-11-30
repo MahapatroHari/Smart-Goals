@@ -13,13 +13,7 @@
             border-radius: 4px;
         }
 
-        .taskPriority {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .addButton {
+        .actionButton {
             background-color: black;
             color: white;
             padding: 8px 16px;
@@ -33,15 +27,54 @@
         }
     }
 
-    .warning {
-        color: red;
-        margin-bottom: 20px;
-    }
-
-    .taskList {
+    .listContainer {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
+    .taskActions {
+        display: flex;
+        gap: 10px;
+
+        .toggleButton {
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        .removeButton {
+            background-color: red;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgb(194, 21, 21);
+            }
+        }
+    }
+
+    .taskItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f0f0f0;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    .doneTask {
+        text-decoration: line-through;
+        color: gray;
+    }
 }
