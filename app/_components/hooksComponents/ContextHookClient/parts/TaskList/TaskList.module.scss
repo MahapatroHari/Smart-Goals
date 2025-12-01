@@ -1,0 +1,32 @@
+ .listContainer {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+ }
+
+ .taskActions {
+     display: flex;
+     gap: 10px;
+
+     .removeButton {
+         background-color: red;
+         color: white;
+         padding: 8px 16px;
+         border-radius: 4px;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+
+         &:hover {
+             background-color: rgb(194, 21, 21);
+         }
+     }
+ }
+
+ .taskItem {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: #f0f0f0;
+     padding: 10px;
+     border-radius: 4px;
+ }
