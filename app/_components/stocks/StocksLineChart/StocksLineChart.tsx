@@ -15,8 +15,12 @@ import {
 import styles from "./StocksLineChart.module.scss";
 import TimelineFilter from "../TimelineFilter/TimelineFilter";
 import StatsTable from "../StatsTable/StatsTable";
-import { StockPoint } from "../data";
 import { options } from "../../charts/LineChartContainer/LineChartContainer";
+
+interface StockPoint {
+    date: string;
+    price: number;
+}
 
 ChartJS.register(
     LineElement,
