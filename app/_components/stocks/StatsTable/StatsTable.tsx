@@ -1,7 +1,11 @@
 "use client";
 
 import styles from "./StatsTable.module.scss";
-import { StockPoint } from "../data";
+
+interface StockPoint {
+    date: string;
+    price: number;
+}
 
 type Props = {
     data: StockPoint[];
