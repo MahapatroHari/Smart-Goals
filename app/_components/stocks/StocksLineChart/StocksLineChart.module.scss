@@ -1,0 +1,18 @@
+.stocksLineChart {
+    display: flex;
+    gap: 20px;
+
+    .left {
+        flex: 2;
+
+        .chart {
+            height: 400px;
+        }
+    }
+
+    right {
+        flex: 1;
+
+    }
+
+}
