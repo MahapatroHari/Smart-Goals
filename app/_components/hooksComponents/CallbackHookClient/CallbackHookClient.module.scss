@@ -1,0 +1,106 @@
+.callbackHookClient {
+    margin-top: 80px;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &.light {
+        background: #ffffff;
+        color: #333;
+    }
+
+    &.dark {
+        background: #1f2937;
+        color: #f3f4f6;
+        border-color: #374151;
+
+        .card {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        .header button {
+            background: #4b5563;
+            color: white;
+        }
+    }
+
+    .header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    }
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #f3f4f6;
+        }
+
+        .cart {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    }
+
+    .grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1;
+        min-width: 200px;
+        padding: 20px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        text-align: center;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+        .imagePlaceholder {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        p {
+            color: #10b981;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buyBtn {
+            width: 100%;
+            padding: 8px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .note {
+        margin-top: 30px;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+}

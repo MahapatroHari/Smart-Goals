@@ -2,7 +2,7 @@ import MemoHookClient from "@/app/_components/hooksComponents/MemoHookClient/Mem
 
 const page = () => {
     return (
-        <div>
+        <div className="container">
             <MemoHookClient />
         </div>
     )
